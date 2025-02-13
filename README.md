@@ -23,9 +23,42 @@ A compilation of assignments to practice programming in C# (.NET) from my univer
 + Random
 
 ### PCS2
++ Classes
+  + Auto-implemented properties
+  + Constructor with one or multiple parameters
++ Methods
+  + With a return value
+  + With parameters
++ Static methods and static variables
++ Timer
++ Random-number generation
++ Foreach statement
++ Lists
+  + Add elements
+  + Remove elements
+  + Search
++ Scope
++ Method overloading
++ Enumeration
+    
 ### PCS3
-### PCS4
++ Inheritance and Multiple inheritance
++ Polymorphism
++ Keyword "sealed"
++ Interfaces
++ Exception Handling
++ Read/Write to files ((de)serialize)
++ Connecting to databases
 
+### PCS4
++ Delegates & Events
++ RFID Reader
++ Sorting (Selection sort)
++ Recursion
++ Binary Search
++ "ref" & "out" parameters
++ Linked lists, Stacks & Queues
++ Binary tree
 
 <!--
 TEMPLATES

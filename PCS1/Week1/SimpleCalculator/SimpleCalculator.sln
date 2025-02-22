@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1300
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisualControls", "VisualControls\VisualControls.csproj", "{ABD0B1ED-B01C-42BD-A7D6-3EB617401CB7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCalculator", "SimpleCalculator\SimpleCalculator.csproj", "{2031B533-7FED-480F-A731-9FAA4CA3DF8F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{ABD0B1ED-B01C-42BD-A7D6-3EB617401CB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ABD0B1ED-B01C-42BD-A7D6-3EB617401CB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ABD0B1ED-B01C-42BD-A7D6-3EB617401CB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ABD0B1ED-B01C-42BD-A7D6-3EB617401CB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2031B533-7FED-480F-A731-9FAA4CA3DF8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2031B533-7FED-480F-A731-9FAA4CA3DF8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2031B533-7FED-480F-A731-9FAA4CA3DF8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2031B533-7FED-480F-A731-9FAA4CA3DF8F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {946ADEDD-E155-4729-99C4-B5F8ECABB5EA}
+		SolutionGuid = {8E8936B4-4089-48DE-A01D-908C883E82A7}
 	EndGlobalSection
 EndGlobal

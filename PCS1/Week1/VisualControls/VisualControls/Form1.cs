@@ -17,14 +17,30 @@ namespace VisualControls
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("My name is Meyra and I am 26 years old.");
+            MessageBox.Show("My name is Meyra - Mijn naam is Meyra");
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            this.progressBar1.Value = this.trackBar1.Value;
+            this.label1.Text = this.trackBar1.Value.ToString();
+        }
+
+        private void rbMakeGreen_CheckedChanged(object sender, EventArgs e)
+        {
+            this.BackColor = Color.DarkSeaGreen;
+        }
+
+        private void rbMakeRed_CheckedChanged(object sender, EventArgs e)
+        {
+            this.BackColor = Color.Salmon;
+        }
+
+        private void rbMakeYellow_CheckedChanged(object sender, EventArgs e)
+        {
+            this.BackColor = Color.PaleGoldenrod;
         }
     }
 }

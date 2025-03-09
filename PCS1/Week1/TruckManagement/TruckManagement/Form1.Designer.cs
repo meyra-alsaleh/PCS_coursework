@@ -29,13 +29,17 @@
         private void InitializeComponent()
         {
             this.gbInfo = new System.Windows.Forms.GroupBox();
-            this.gbOrder = new System.Windows.Forms.GroupBox();
-            this.lblTruckCapacity = new System.Windows.Forms.Label();
-            this.tbTruckCapacity = new System.Windows.Forms.TextBox();
-            this.blbBoxesPerPallet = new System.Windows.Forms.Label();
             this.tbBoxesPerPallet = new System.Windows.Forms.TextBox();
-            this.lblOrderedBoxes = new System.Windows.Forms.Label();
+            this.blbBoxesPerPallet = new System.Windows.Forms.Label();
+            this.tbTruckCapacity = new System.Windows.Forms.TextBox();
+            this.lblTruckCapacity = new System.Windows.Forms.Label();
+            this.gbOrder = new System.Windows.Forms.GroupBox();
+            this.btnCalculate = new System.Windows.Forms.Button();
+            this.lblTotalTrucks = new System.Windows.Forms.Label();
             this.tbOrderedBoxes = new System.Windows.Forms.TextBox();
+            this.lblOrderedBoxes = new System.Windows.Forms.Label();
+            this.lblRemainingPallets = new System.Windows.Forms.Label();
+            this.lblRemainingBoxes = new System.Windows.Forms.Label();
             this.gbInfo.SuspendLayout();
             this.gbOrder.SuspendLayout();
             this.SuspendLayout();
@@ -54,9 +58,49 @@
             this.gbInfo.TabStop = false;
             this.gbInfo.Text = "Truck and pallet information";
             // 
+            // tbBoxesPerPallet
+            // 
+            this.tbBoxesPerPallet.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbBoxesPerPallet.Location = new System.Drawing.Point(37, 338);
+            this.tbBoxesPerPallet.Name = "tbBoxesPerPallet";
+            this.tbBoxesPerPallet.Size = new System.Drawing.Size(283, 49);
+            this.tbBoxesPerPallet.TabIndex = 0;
+            // 
+            // blbBoxesPerPallet
+            // 
+            this.blbBoxesPerPallet.AutoSize = true;
+            this.blbBoxesPerPallet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.blbBoxesPerPallet.Location = new System.Drawing.Point(31, 286);
+            this.blbBoxesPerPallet.Name = "blbBoxesPerPallet";
+            this.blbBoxesPerPallet.Size = new System.Drawing.Size(338, 36);
+            this.blbBoxesPerPallet.TabIndex = 0;
+            this.blbBoxesPerPallet.Text = "Number boxes per pallet";
+            // 
+            // tbTruckCapacity
+            // 
+            this.tbTruckCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTruckCapacity.Location = new System.Drawing.Point(37, 175);
+            this.tbTruckCapacity.Name = "tbTruckCapacity";
+            this.tbTruckCapacity.Size = new System.Drawing.Size(283, 49);
+            this.tbTruckCapacity.TabIndex = 0;
+            // 
+            // lblTruckCapacity
+            // 
+            this.lblTruckCapacity.AutoSize = true;
+            this.lblTruckCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTruckCapacity.Location = new System.Drawing.Point(31, 124);
+            this.lblTruckCapacity.Name = "lblTruckCapacity";
+            this.lblTruckCapacity.Size = new System.Drawing.Size(389, 36);
+            this.lblTruckCapacity.TabIndex = 0;
+            this.lblTruckCapacity.Text = "Truck capacity (nr of pallets)";
+            // 
             // gbOrder
             // 
             this.gbOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(215)))), ((int)(((byte)(211)))));
+            this.gbOrder.Controls.Add(this.lblRemainingBoxes);
+            this.gbOrder.Controls.Add(this.lblRemainingPallets);
+            this.gbOrder.Controls.Add(this.btnCalculate);
+            this.gbOrder.Controls.Add(this.lblTotalTrucks);
             this.gbOrder.Controls.Add(this.tbOrderedBoxes);
             this.gbOrder.Controls.Add(this.lblOrderedBoxes);
             this.gbOrder.Location = new System.Drawing.Point(585, 43);
@@ -66,65 +110,69 @@
             this.gbOrder.TabStop = false;
             this.gbOrder.Text = "About this order";
             // 
-            // lblTruckCapacity
+            // btnCalculate
             // 
-            this.lblTruckCapacity.AutoSize = true;
-            this.lblTruckCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTruckCapacity.Location = new System.Drawing.Point(24, 181);
-            this.lblTruckCapacity.Name = "lblTruckCapacity";
-            this.lblTruckCapacity.Size = new System.Drawing.Size(389, 36);
-            this.lblTruckCapacity.TabIndex = 0;
-            this.lblTruckCapacity.Text = "Truck capacity (nr of pallets)";
+            this.btnCalculate.Location = new System.Drawing.Point(24, 202);
+            this.btnCalculate.Name = "btnCalculate";
+            this.btnCalculate.Size = new System.Drawing.Size(458, 79);
+            this.btnCalculate.TabIndex = 3;
+            this.btnCalculate.Text = "Calculate";
+            this.btnCalculate.UseVisualStyleBackColor = true;
+            this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
             // 
-            // tbTruckCapacity
+            // lblTotalTrucks
             // 
-            this.tbTruckCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTruckCapacity.Location = new System.Drawing.Point(30, 232);
-            this.tbTruckCapacity.Name = "tbTruckCapacity";
-            this.tbTruckCapacity.Size = new System.Drawing.Size(283, 49);
-            this.tbTruckCapacity.TabIndex = 0;
+            this.lblTotalTrucks.AutoSize = true;
+            this.lblTotalTrucks.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalTrucks.Location = new System.Drawing.Point(17, 322);
+            this.lblTotalTrucks.Name = "lblTotalTrucks";
+            this.lblTotalTrucks.Size = new System.Drawing.Size(222, 39);
+            this.lblTotalTrucks.TabIndex = 2;
+            this.lblTotalTrucks.Text = "Total Trucks: ";
             // 
-            // blbBoxesPerPallet
+            // tbOrderedBoxes
             // 
-            this.blbBoxesPerPallet.AutoSize = true;
-            this.blbBoxesPerPallet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.blbBoxesPerPallet.Location = new System.Drawing.Point(24, 343);
-            this.blbBoxesPerPallet.Name = "blbBoxesPerPallet";
-            this.blbBoxesPerPallet.Size = new System.Drawing.Size(338, 36);
-            this.blbBoxesPerPallet.TabIndex = 0;
-            this.blbBoxesPerPallet.Text = "Number boxes per pallet";
-            // 
-            // tbBoxesPerPallet
-            // 
-            this.tbBoxesPerPallet.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbBoxesPerPallet.Location = new System.Drawing.Point(30, 395);
-            this.tbBoxesPerPallet.Name = "tbBoxesPerPallet";
-            this.tbBoxesPerPallet.Size = new System.Drawing.Size(283, 49);
-            this.tbBoxesPerPallet.TabIndex = 0;
+            this.tbOrderedBoxes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbOrderedBoxes.Location = new System.Drawing.Point(24, 124);
+            this.tbOrderedBoxes.Name = "tbOrderedBoxes";
+            this.tbOrderedBoxes.Size = new System.Drawing.Size(283, 49);
+            this.tbOrderedBoxes.TabIndex = 1;
             // 
             // lblOrderedBoxes
             // 
             this.lblOrderedBoxes.AutoSize = true;
             this.lblOrderedBoxes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrderedBoxes.Location = new System.Drawing.Point(71, 181);
+            this.lblOrderedBoxes.Location = new System.Drawing.Point(18, 73);
             this.lblOrderedBoxes.Name = "lblOrderedBoxes";
             this.lblOrderedBoxes.Size = new System.Drawing.Size(352, 36);
             this.lblOrderedBoxes.TabIndex = 0;
             this.lblOrderedBoxes.Text = "Number of ordered boxes";
             // 
-            // tbOrderedBoxes
+            // lblRemainingPallets
             // 
-            this.tbOrderedBoxes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbOrderedBoxes.Location = new System.Drawing.Point(77, 232);
-            this.tbOrderedBoxes.Name = "tbOrderedBoxes";
-            this.tbOrderedBoxes.Size = new System.Drawing.Size(283, 49);
-            this.tbOrderedBoxes.TabIndex = 1;
+            this.lblRemainingPallets.AutoSize = true;
+            this.lblRemainingPallets.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRemainingPallets.Location = new System.Drawing.Point(17, 401);
+            this.lblRemainingPallets.Name = "lblRemainingPallets";
+            this.lblRemainingPallets.Size = new System.Drawing.Size(311, 39);
+            this.lblRemainingPallets.TabIndex = 4;
+            this.lblRemainingPallets.Text = "Remaining Pallets: ";
+            // 
+            // lblRemainingBoxes
+            // 
+            this.lblRemainingBoxes.AutoSize = true;
+            this.lblRemainingBoxes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRemainingBoxes.Location = new System.Drawing.Point(17, 480);
+            this.lblRemainingBoxes.Name = "lblRemainingBoxes";
+            this.lblRemainingBoxes.Size = new System.Drawing.Size(303, 39);
+            this.lblRemainingBoxes.TabIndex = 5;
+            this.lblRemainingBoxes.Text = "Remaining Boxes: ";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1170, 636);
+            this.ClientSize = new System.Drawing.Size(1170, 607);
             this.Controls.Add(this.gbOrder);
             this.Controls.Add(this.gbInfo);
             this.Name = "Form1";
@@ -147,6 +195,10 @@
         private System.Windows.Forms.Label lblTruckCapacity;
         private System.Windows.Forms.TextBox tbOrderedBoxes;
         private System.Windows.Forms.Label lblOrderedBoxes;
+        private System.Windows.Forms.Label lblTotalTrucks;
+        private System.Windows.Forms.Button btnCalculate;
+        private System.Windows.Forms.Label lblRemainingBoxes;
+        private System.Windows.Forms.Label lblRemainingPallets;
     }
 }
 

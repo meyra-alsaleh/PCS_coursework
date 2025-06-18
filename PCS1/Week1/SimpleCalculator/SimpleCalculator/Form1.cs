@@ -19,25 +19,49 @@ namespace SimpleCalculator
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(this.tbFirstNumber.Text) || string.IsNullOrWhiteSpace(this.tbSecondNumber.Text))
+            {
+                this.lblAnswer.Text = "Please fill in the two number values.";
+                return;
+            }
+
             int answer = Convert.ToInt32(this.tbFirstNumber.Text) + Convert.ToInt32(this.tbSecondNumber.Text);
             this.lblAnswer.Text = "Answer: " + answer;
         }
 
         private void btnSubtract_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(this.tbFirstNumber.Text) || string.IsNullOrWhiteSpace(this.tbSecondNumber.Text))
+            {
+                this.lblAnswer.Text = "Please fill in the two number values.";
+                return;
+            }
+
             int answer = Convert.ToInt32(this.tbFirstNumber.Text) - Convert.ToInt32(this.tbSecondNumber.Text);
             this.lblAnswer.Text = "Answer: " + answer;
         }
 
         private void btnMultiply_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(this.tbFirstNumber.Text) || string.IsNullOrWhiteSpace(this.tbSecondNumber.Text))
+            {
+                this.lblAnswer.Text = "Please fill in the two number values.";
+                return;
+            }
+
             int answer = Convert.ToInt32(this.tbFirstNumber.Text) * Convert.ToInt32(this.tbSecondNumber.Text);
             this.lblAnswer.Text = "Answer: " + answer;
         }
 
         private void btnDivide_Click(object sender, EventArgs e)
         {
-            int num1 = Convert.ToInt32(this.tbSecondNumber.Text);
+            if (string.IsNullOrWhiteSpace(this.tbFirstNumber.Text) || string.IsNullOrWhiteSpace(this.tbSecondNumber.Text))
+            {
+                this.lblAnswer.Text = "Please fill in the two number values.";
+                return;
+            }
+
+            int num1 = Convert.ToInt32(this.tbFirstNumber.Text);
             int num2 = Convert.ToInt32(this.tbSecondNumber.Text);
             if (num2 != 0)
             {

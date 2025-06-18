@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace VisualControls.Properties {
+namespace ToggleColours.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

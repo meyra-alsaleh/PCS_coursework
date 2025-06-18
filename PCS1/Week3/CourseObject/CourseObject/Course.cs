@@ -12,16 +12,25 @@ namespace CourseObject
         // Instance variables 
         private String name;
         private int ec;
+
         // Methods 
         public void SetName(String name)
-        { this.name = name; }
+        { 
+            this.name = name; 
+        }
         public String GetName()
-        { return this.name; }
+        { 
+            return this.name; 
+        }
 
         public void SetEc(int ec)
-        { this.ec = ec; }
+        { 
+            this.ec = ec; 
+        }
         public int GetEc()
-        { return this.ec; }
+        { 
+            return this.ec; 
+        }
 
     }
 }

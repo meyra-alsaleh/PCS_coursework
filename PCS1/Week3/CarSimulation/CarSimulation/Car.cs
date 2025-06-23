@@ -10,7 +10,7 @@ namespace CarSimulation
     {
         // Instance variables
         private string brand;
-        private int currentSpeed;
+        private int currentSpeed = 0;
         private int maxSpeed;
 
 
@@ -31,6 +31,30 @@ namespace CarSimulation
             return "Speed of my " + this.brand + " is " + this.currentSpeed + 
                 " km/h and its maximum speed is " + this.maxSpeed + " km/h";
         }
+        public void SpeedUp()
+        {
+            if (this.currentSpeed < this.maxSpeed)
+            {
+                this.currentSpeed += 7;
 
+                if (this.currentSpeed > this.maxSpeed)
+                {
+                    this.currentSpeed = this.maxSpeed;
+                }
+            }
+        }
+
+        public void SlowDown()
+        {
+            if (this.currentSpeed > 0)
+            {
+                this.currentSpeed -= 10;
+
+                if (this.currentSpeed < 0)
+                {
+                    this.currentSpeed = 0;
+                }
+            }
+        }
     }
 }

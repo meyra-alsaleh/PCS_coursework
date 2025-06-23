@@ -42,6 +42,7 @@
             gbCarStatus = new GroupBox();
             numCar1MaxSpeed = new NumericUpDown();
             numCar2MaxSpeed = new NumericUpDown();
+            btnSetCarInfo = new Button();
             gbActivity.SuspendLayout();
             gbCarStatus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numCar1MaxSpeed).BeginInit();
@@ -50,9 +51,9 @@
             // 
             // btnAccelerate
             // 
-            btnAccelerate.Location = new Point(41, 540);
+            btnAccelerate.Location = new Point(41, 541);
             btnAccelerate.Name = "btnAccelerate";
-            btnAccelerate.Size = new Size(374, 108);
+            btnAccelerate.Size = new Size(476, 108);
             btnAccelerate.TabIndex = 0;
             btnAccelerate.Text = "Accelerate";
             btnAccelerate.UseVisualStyleBackColor = true;
@@ -60,12 +61,13 @@
             // 
             // btnBreaks
             // 
-            btnBreaks.Location = new Point(474, 540);
+            btnBreaks.Location = new Point(572, 541);
             btnBreaks.Name = "btnBreaks";
-            btnBreaks.Size = new Size(370, 107);
+            btnBreaks.Size = new Size(476, 107);
             btnBreaks.TabIndex = 1;
             btnBreaks.Text = "Use the breaks";
             btnBreaks.UseVisualStyleBackColor = true;
+            btnBreaks.Click += btnBreaks_Click;
             // 
             // lblCar1
             // 
@@ -90,7 +92,7 @@
             gbActivity.BackColor = Color.FromArgb(252, 235, 248);
             gbActivity.Controls.Add(rbCar2);
             gbActivity.Controls.Add(rbCar1);
-            gbActivity.Location = new Point(687, 36);
+            gbActivity.Location = new Point(875, 34);
             gbActivity.Name = "gbActivity";
             gbActivity.Size = new Size(157, 174);
             gbActivity.TabIndex = 4;
@@ -104,13 +106,13 @@
             rbCar2.Name = "rbCar2";
             rbCar2.Size = new Size(123, 45);
             rbCar2.TabIndex = 1;
-            rbCar2.TabStop = true;
             rbCar2.Text = "Car 2";
             rbCar2.UseVisualStyleBackColor = true;
             // 
             // rbCar1
             // 
             rbCar1.AutoSize = true;
+            rbCar1.Checked = true;
             rbCar1.Location = new Point(24, 60);
             rbCar1.Name = "rbCar1";
             rbCar1.Size = new Size(123, 45);
@@ -160,13 +162,14 @@
             gbCarStatus.Controls.Add(lblCar1);
             gbCarStatus.Location = new Point(41, 277);
             gbCarStatus.Name = "gbCarStatus";
-            gbCarStatus.Size = new Size(803, 239);
+            gbCarStatus.Size = new Size(1007, 239);
             gbCarStatus.TabIndex = 9;
             gbCarStatus.TabStop = false;
             // 
             // numCar1MaxSpeed
             // 
             numCar1MaxSpeed.Location = new Point(522, 46);
+            numCar1MaxSpeed.Maximum = new decimal(new int[] { 500, 0, 0, 0 });
             numCar1MaxSpeed.Name = "numCar1MaxSpeed";
             numCar1MaxSpeed.Size = new Size(118, 47);
             numCar1MaxSpeed.TabIndex = 10;
@@ -174,16 +177,28 @@
             // numCar2MaxSpeed
             // 
             numCar2MaxSpeed.Location = new Point(522, 143);
+            numCar2MaxSpeed.Maximum = new decimal(new int[] { 500, 0, 0, 0 });
             numCar2MaxSpeed.Name = "numCar2MaxSpeed";
             numCar2MaxSpeed.Size = new Size(118, 47);
             numCar2MaxSpeed.TabIndex = 11;
+            // 
+            // btnSetCarInfo
+            // 
+            btnSetCarInfo.Location = new Point(673, 84);
+            btnSetCarInfo.Name = "btnSetCarInfo";
+            btnSetCarInfo.Size = new Size(156, 64);
+            btnSetCarInfo.TabIndex = 12;
+            btnSetCarInfo.Text = "Set";
+            btnSetCarInfo.UseVisualStyleBackColor = true;
+            btnSetCarInfo.Click += btnSetCarInfo_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(244, 244, 255);
-            ClientSize = new Size(886, 687);
+            ClientSize = new Size(1060, 688);
+            Controls.Add(btnSetCarInfo);
             Controls.Add(numCar2MaxSpeed);
             Controls.Add(numCar1MaxSpeed);
             Controls.Add(gbCarStatus);
@@ -222,5 +237,6 @@
         private GroupBox gbCarStatus;
         private NumericUpDown numCar1MaxSpeed;
         private NumericUpDown numCar2MaxSpeed;
+        private Button btnSetCarInfo;
     }
 }

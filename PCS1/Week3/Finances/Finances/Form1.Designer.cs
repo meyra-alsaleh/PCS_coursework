@@ -33,6 +33,7 @@
             lblShowOwnerName = new Label();
             btnShowInfo = new Button();
             gbData = new GroupBox();
+            btnWithdrawMoney = new Button();
             btnAddMoney = new Button();
             lblAmountToAdd = new Label();
             numAddMoney = new NumericUpDown();
@@ -41,11 +42,24 @@
             button1 = new Button();
             button2 = new Button();
             numericUpDown1 = new NumericUpDown();
-            btnWithdrawMoney = new Button();
+            gbShowInfoOther = new GroupBox();
+            lblShowAmountMoneyOther = new Label();
+            lblShowOwnerNameOther = new Label();
+            btnShowInfoOther = new Button();
+            gbDataOther = new GroupBox();
+            btnWithdrawMoneyOther = new Button();
+            btnAddMoneyOther = new Button();
+            lblAmountToAddOther = new Label();
+            btnSetOwnerOther = new Button();
+            numAddMoneyOther = new NumericUpDown();
+            tbOwnerNameOther = new TextBox();
             gbInfo.SuspendLayout();
             gbData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numAddMoney).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            gbShowInfoOther.SuspendLayout();
+            gbDataOther.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numAddMoneyOther).BeginInit();
             SuspendLayout();
             // 
             // gbInfo
@@ -56,7 +70,7 @@
             gbInfo.Controls.Add(btnShowInfo);
             gbInfo.Location = new Point(39, 37);
             gbInfo.Name = "gbInfo";
-            gbInfo.Size = new Size(867, 248);
+            gbInfo.Size = new Size(774, 248);
             gbInfo.TabIndex = 0;
             gbInfo.TabStop = false;
             // 
@@ -104,6 +118,16 @@
             gbData.TabIndex = 1;
             gbData.TabStop = false;
             // 
+            // btnWithdrawMoney
+            // 
+            btnWithdrawMoney.Location = new Point(334, 358);
+            btnWithdrawMoney.Name = "btnWithdrawMoney";
+            btnWithdrawMoney.Size = new Size(268, 60);
+            btnWithdrawMoney.TabIndex = 5;
+            btnWithdrawMoney.Text = "Withdraw Money";
+            btnWithdrawMoney.UseVisualStyleBackColor = true;
+            btnWithdrawMoney.Click += btnWithdrawMoney_Click;
+            // 
             // btnAddMoney
             // 
             btnAddMoney.FlatStyle = FlatStyle.System;
@@ -128,7 +152,7 @@
             // numAddMoney
             // 
             numAddMoney.Location = new Point(330, 283);
-            numAddMoney.Maximum = new decimal(new int[] { -1981284352, -1966660860, 0, 0 });
+            numAddMoney.Maximum = new decimal(new int[] { 2000000000, 0, 0, 0 });
             numAddMoney.Name = "numAddMoney";
             numAddMoney.Size = new Size(272, 47);
             numAddMoney.TabIndex = 2;
@@ -153,9 +177,9 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI", 15.9000006F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(712, 385);
+            button1.Location = new Point(717, 385);
             button1.Name = "button1";
-            button1.Size = new Size(194, 103);
+            button1.Size = new Size(230, 103);
             button1.TabIndex = 2;
             button1.Text = ">>";
             button1.UseVisualStyleBackColor = true;
@@ -163,35 +187,138 @@
             // button2
             // 
             button2.Font = new Font("Segoe UI", 15.9000006F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Location = new Point(712, 610);
+            button2.Location = new Point(717, 610);
             button2.Name = "button2";
-            button2.Size = new Size(194, 103);
+            button2.Size = new Size(230, 103);
             button2.TabIndex = 3;
             button2.Text = "<<";
             button2.UseVisualStyleBackColor = true;
             // 
             // numericUpDown1
             // 
-            numericUpDown1.Location = new Point(712, 523);
+            numericUpDown1.Location = new Point(717, 523);
+            numericUpDown1.Maximum = new decimal(new int[] { 2000000000, 0, 0, 0 });
             numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(194, 47);
+            numericUpDown1.Size = new Size(230, 47);
             numericUpDown1.TabIndex = 4;
             // 
-            // btnWithdrawMoney
+            // gbShowInfoOther
             // 
-            btnWithdrawMoney.Location = new Point(334, 358);
-            btnWithdrawMoney.Name = "btnWithdrawMoney";
-            btnWithdrawMoney.Size = new Size(268, 60);
-            btnWithdrawMoney.TabIndex = 5;
-            btnWithdrawMoney.Text = "Withdraw Money";
-            btnWithdrawMoney.UseVisualStyleBackColor = true;
-            btnWithdrawMoney.Click += btnWithdrawMoney_Click;
+            gbShowInfoOther.BackColor = Color.FromArgb(240, 166, 159);
+            gbShowInfoOther.Controls.Add(lblShowAmountMoneyOther);
+            gbShowInfoOther.Controls.Add(lblShowOwnerNameOther);
+            gbShowInfoOther.Controls.Add(btnShowInfoOther);
+            gbShowInfoOther.Location = new Point(856, 37);
+            gbShowInfoOther.Name = "gbShowInfoOther";
+            gbShowInfoOther.Size = new Size(774, 248);
+            gbShowInfoOther.TabIndex = 5;
+            gbShowInfoOther.TabStop = false;
+            // 
+            // lblShowAmountMoneyOther
+            // 
+            lblShowAmountMoneyOther.AutoSize = true;
+            lblShowAmountMoneyOther.Location = new Point(295, 128);
+            lblShowAmountMoneyOther.Name = "lblShowAmountMoneyOther";
+            lblShowAmountMoneyOther.Size = new Size(25, 41);
+            lblShowAmountMoneyOther.TabIndex = 5;
+            lblShowAmountMoneyOther.Text = ".";
+            // 
+            // lblShowOwnerNameOther
+            // 
+            lblShowOwnerNameOther.AutoSize = true;
+            lblShowOwnerNameOther.Location = new Point(295, 43);
+            lblShowOwnerNameOther.Name = "lblShowOwnerNameOther";
+            lblShowOwnerNameOther.Size = new Size(25, 41);
+            lblShowOwnerNameOther.TabIndex = 4;
+            lblShowOwnerNameOther.Text = ".";
+            // 
+            // btnShowInfoOther
+            // 
+            btnShowInfoOther.Location = new Point(57, 75);
+            btnShowInfoOther.Name = "btnShowInfoOther";
+            btnShowInfoOther.Size = new Size(175, 94);
+            btnShowInfoOther.TabIndex = 3;
+            btnShowInfoOther.Text = "Show Info";
+            btnShowInfoOther.UseVisualStyleBackColor = true;
+            btnShowInfoOther.Click += btnShowInfoOther_Click;
+            // 
+            // gbDataOther
+            // 
+            gbDataOther.BackColor = SystemColors.ActiveCaption;
+            gbDataOther.Controls.Add(btnWithdrawMoneyOther);
+            gbDataOther.Controls.Add(btnAddMoneyOther);
+            gbDataOther.Controls.Add(lblAmountToAddOther);
+            gbDataOther.Controls.Add(btnSetOwnerOther);
+            gbDataOther.Controls.Add(numAddMoneyOther);
+            gbDataOther.Controls.Add(tbOwnerNameOther);
+            gbDataOther.Location = new Point(986, 316);
+            gbDataOther.Name = "gbDataOther";
+            gbDataOther.Size = new Size(644, 469);
+            gbDataOther.TabIndex = 6;
+            gbDataOther.TabStop = false;
+            // 
+            // btnWithdrawMoneyOther
+            // 
+            btnWithdrawMoneyOther.Location = new Point(335, 360);
+            btnWithdrawMoneyOther.Name = "btnWithdrawMoneyOther";
+            btnWithdrawMoneyOther.Size = new Size(272, 60);
+            btnWithdrawMoneyOther.TabIndex = 6;
+            btnWithdrawMoneyOther.Text = "Withdraw Money";
+            btnWithdrawMoneyOther.UseVisualStyleBackColor = true;
+            btnWithdrawMoneyOther.Click += btnWithdrawMoneyOther_Click;
+            // 
+            // btnAddMoneyOther
+            // 
+            btnAddMoneyOther.Location = new Point(35, 360);
+            btnAddMoneyOther.Name = "btnAddMoneyOther";
+            btnAddMoneyOther.Size = new Size(268, 58);
+            btnAddMoneyOther.TabIndex = 6;
+            btnAddMoneyOther.Text = "Add Money";
+            btnAddMoneyOther.UseVisualStyleBackColor = true;
+            btnAddMoneyOther.Click += btnAddMoneyOther_Click;
+            // 
+            // lblAmountToAddOther
+            // 
+            lblAmountToAddOther.AutoSize = true;
+            lblAmountToAddOther.Font = new Font("Segoe UI", 9.900001F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblAmountToAddOther.Location = new Point(30, 295);
+            lblAmountToAddOther.Name = "lblAmountToAddOther";
+            lblAmountToAddOther.Size = new Size(299, 46);
+            lblAmountToAddOther.TabIndex = 7;
+            lblAmountToAddOther.Text = "Amount of money:";
+            // 
+            // btnSetOwnerOther
+            // 
+            btnSetOwnerOther.Location = new Point(35, 136);
+            btnSetOwnerOther.Name = "btnSetOwnerOther";
+            btnSetOwnerOther.Size = new Size(187, 60);
+            btnSetOwnerOther.TabIndex = 6;
+            btnSetOwnerOther.Text = "Set Owner";
+            btnSetOwnerOther.UseVisualStyleBackColor = true;
+            btnSetOwnerOther.Click += btnSetOwnerOther_Click;
+            // 
+            // numAddMoneyOther
+            // 
+            numAddMoneyOther.Location = new Point(335, 294);
+            numAddMoneyOther.Maximum = new decimal(new int[] { 2000000000, 0, 0, 0 });
+            numAddMoneyOther.Name = "numAddMoneyOther";
+            numAddMoneyOther.Size = new Size(272, 47);
+            numAddMoneyOther.TabIndex = 6;
+            // 
+            // tbOwnerNameOther
+            // 
+            tbOwnerNameOther.Location = new Point(35, 69);
+            tbOwnerNameOther.Name = "tbOwnerNameOther";
+            tbOwnerNameOther.Size = new Size(572, 47);
+            tbOwnerNameOther.TabIndex = 0;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(962, 816);
+            ClientSize = new Size(1659, 816);
+            Controls.Add(gbDataOther);
+            Controls.Add(gbShowInfoOther);
             Controls.Add(numericUpDown1);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -205,6 +332,11 @@
             gbData.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numAddMoney).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            gbShowInfoOther.ResumeLayout(false);
+            gbShowInfoOther.PerformLayout();
+            gbDataOther.ResumeLayout(false);
+            gbDataOther.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numAddMoneyOther).EndInit();
             ResumeLayout(false);
         }
 
@@ -224,5 +356,16 @@
         private Label lblShowAmountMoney;
         private Label lblShowOwnerName;
         private Button btnWithdrawMoney;
+        private GroupBox gbShowInfoOther;
+        private GroupBox gbDataOther;
+        private Label lblShowAmountMoneyOther;
+        private Label lblShowOwnerNameOther;
+        private Button btnShowInfoOther;
+        private NumericUpDown numAddMoneyOther;
+        private TextBox tbOwnerNameOther;
+        private Button btnWithdrawMoneyOther;
+        private Button btnAddMoneyOther;
+        private Label lblAmountToAddOther;
+        private Button btnSetOwnerOther;
     }
 }

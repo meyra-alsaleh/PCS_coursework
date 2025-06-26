@@ -3,11 +3,13 @@ namespace Finances
     public partial class Form1 : Form
     {
         private Wallet myWallet;
+        private Wallet otherWallet;
         public Form1()
         {
             InitializeComponent();
 
             myWallet = new Wallet();
+            otherWallet = new Wallet();
         }
 
         private void btnSetOwner_Click(object sender, EventArgs e)
@@ -29,6 +31,27 @@ namespace Finances
         private void btnWithdrawMoney_Click(object sender, EventArgs e)
         {
             myWallet.WithdrawMoney(Convert.ToInt32(this.numAddMoney.Value));
+        }
+
+        private void btnShowInfoOther_Click(object sender, EventArgs e)
+        {
+            this.lblShowOwnerNameOther.Text = "Wallet belongs to " + otherWallet.GetOwnerName();
+            this.lblShowAmountMoneyOther.Text = "Amount of money is " + otherWallet.GetAmountMoney() + " EURO";
+        }
+
+        private void btnSetOwnerOther_Click(object sender, EventArgs e)
+        {
+            otherWallet.SetOwnerName(this.tbOwnerNameOther.Text);
+        }
+
+        private void btnAddMoneyOther_Click(object sender, EventArgs e)
+        {
+            otherWallet.AddMoney(Convert.ToInt32(this.numAddMoneyOther.Value));
+        }
+
+        private void btnWithdrawMoneyOther_Click(object sender, EventArgs e)
+        {
+            otherWallet.WithdrawMoney(Convert.ToInt32(this.numAddMoneyOther.Value));
         }
     }
 }

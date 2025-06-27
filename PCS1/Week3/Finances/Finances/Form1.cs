@@ -53,5 +53,43 @@ namespace Finances
         {
             otherWallet.WithdrawMoney(Convert.ToInt32(this.numAddMoneyOther.Value));
         }
+
+        private void btnTransferMyToOther_Click(object sender, EventArgs e)
+        {
+            int transferAmount = Convert.ToInt32(this.numTransferMoney.Value);
+
+            if (transferAmount < 0)
+            {
+                MessageBox.Show("The transfer money amount cannot be negative");
+            }
+            else if (transferAmount > myWallet.GetAmountMoney())
+            {
+                MessageBox.Show("Your wallet does not have enough money to transfer");
+            }
+            else
+            {
+                myWallet.WithdrawMoney(transferAmount);
+                otherWallet.AddMoney(transferAmount);
+            }
+        }
+
+        private void btnTransferOtherToMy_Click(object sender, EventArgs e)
+        {
+            int transferAmount = Convert.ToInt32(this.numTransferMoney.Value);
+
+            if (transferAmount < 0)
+            {
+                MessageBox.Show("The transfer money amount cannot be negative");
+            }
+            else if (transferAmount > otherWallet.GetAmountMoney())
+            {
+                MessageBox.Show("Your wallet does not have enough money to transfer");
+            }
+            else
+            {
+                otherWallet.WithdrawMoney(transferAmount);
+                myWallet.AddMoney(transferAmount);
+            }
+        }
     }
 }

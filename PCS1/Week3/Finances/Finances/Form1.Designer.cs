@@ -39,9 +39,8 @@
             numAddMoney = new NumericUpDown();
             btnSetOwner = new Button();
             tbOwnerName = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
-            numericUpDown1 = new NumericUpDown();
+            btnTransferMyToOther = new Button();
+            btnTransferOtherToMy = new Button();
             gbShowInfoOther = new GroupBox();
             lblShowAmountMoneyOther = new Label();
             lblShowOwnerNameOther = new Label();
@@ -53,13 +52,14 @@
             btnSetOwnerOther = new Button();
             numAddMoneyOther = new NumericUpDown();
             tbOwnerNameOther = new TextBox();
+            numTransferMoney = new NumericUpDown();
             gbInfo.SuspendLayout();
             gbData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numAddMoney).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             gbShowInfoOther.SuspendLayout();
             gbDataOther.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numAddMoneyOther).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numTransferMoney).BeginInit();
             SuspendLayout();
             // 
             // gbInfo
@@ -174,33 +174,27 @@
             tbOwnerName.Size = new Size(572, 47);
             tbOwnerName.TabIndex = 0;
             // 
-            // button1
+            // btnTransferMyToOther
             // 
-            button1.Font = new Font("Segoe UI", 15.9000006F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(717, 385);
-            button1.Name = "button1";
-            button1.Size = new Size(230, 103);
-            button1.TabIndex = 2;
-            button1.Text = ">>";
-            button1.UseVisualStyleBackColor = true;
+            btnTransferMyToOther.Font = new Font("Segoe UI", 15.9000006F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnTransferMyToOther.Location = new Point(717, 385);
+            btnTransferMyToOther.Name = "btnTransferMyToOther";
+            btnTransferMyToOther.Size = new Size(230, 103);
+            btnTransferMyToOther.TabIndex = 2;
+            btnTransferMyToOther.Text = ">>";
+            btnTransferMyToOther.UseVisualStyleBackColor = true;
+            btnTransferMyToOther.Click += btnTransferMyToOther_Click;
             // 
-            // button2
+            // btnTransferOtherToMy
             // 
-            button2.Font = new Font("Segoe UI", 15.9000006F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Location = new Point(717, 610);
-            button2.Name = "button2";
-            button2.Size = new Size(230, 103);
-            button2.TabIndex = 3;
-            button2.Text = "<<";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // numericUpDown1
-            // 
-            numericUpDown1.Location = new Point(717, 523);
-            numericUpDown1.Maximum = new decimal(new int[] { 2000000000, 0, 0, 0 });
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(230, 47);
-            numericUpDown1.TabIndex = 4;
+            btnTransferOtherToMy.Font = new Font("Segoe UI", 15.9000006F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnTransferOtherToMy.Location = new Point(717, 610);
+            btnTransferOtherToMy.Name = "btnTransferOtherToMy";
+            btnTransferOtherToMy.Size = new Size(230, 103);
+            btnTransferOtherToMy.TabIndex = 3;
+            btnTransferOtherToMy.Text = "<<";
+            btnTransferOtherToMy.UseVisualStyleBackColor = true;
+            btnTransferOtherToMy.Click += btnTransferOtherToMy_Click;
             // 
             // gbShowInfoOther
             // 
@@ -312,16 +306,25 @@
             tbOwnerNameOther.Size = new Size(572, 47);
             tbOwnerNameOther.TabIndex = 0;
             // 
+            // numTransferMoney
+            // 
+            numTransferMoney.Location = new Point(717, 528);
+            numTransferMoney.Maximum = new decimal(new int[] { 2000000000, 0, 0, 0 });
+            numTransferMoney.Minimum = new decimal(new int[] { 2000000000, 0, 0, int.MinValue });
+            numTransferMoney.Name = "numTransferMoney";
+            numTransferMoney.Size = new Size(229, 47);
+            numTransferMoney.TabIndex = 7;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1659, 816);
+            Controls.Add(numTransferMoney);
             Controls.Add(gbDataOther);
             Controls.Add(gbShowInfoOther);
-            Controls.Add(numericUpDown1);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnTransferOtherToMy);
+            Controls.Add(btnTransferMyToOther);
             Controls.Add(gbData);
             Controls.Add(gbInfo);
             Name = "Form1";
@@ -331,12 +334,12 @@
             gbData.ResumeLayout(false);
             gbData.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numAddMoney).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             gbShowInfoOther.ResumeLayout(false);
             gbShowInfoOther.PerformLayout();
             gbDataOther.ResumeLayout(false);
             gbDataOther.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numAddMoneyOther).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numTransferMoney).EndInit();
             ResumeLayout(false);
         }
 
@@ -350,9 +353,8 @@
         private Button btnAddMoney;
         private Label lblAmountToAdd;
         private NumericUpDown numAddMoney;
-        private Button button1;
-        private Button button2;
-        private NumericUpDown numericUpDown1;
+        private Button btnTransferMyToOther;
+        private Button btnTransferOtherToMy;
         private Label lblShowAmountMoney;
         private Label lblShowOwnerName;
         private Button btnWithdrawMoney;
@@ -367,5 +369,6 @@
         private Button btnAddMoneyOther;
         private Label lblAmountToAddOther;
         private Button btnSetOwnerOther;
+        private NumericUpDown numTransferMoney;
     }
 }

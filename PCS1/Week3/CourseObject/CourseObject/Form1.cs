@@ -6,13 +6,14 @@ namespace CourseObject
         public Form1()
         {
             InitializeComponent();
-            course = new Course();
         }
 
         private void btnCreateCourse_Click(object sender, EventArgs e)
         {
-            course.SetName(this.tbCourseName.Text);
-            course.SetEc(Convert.ToInt32(this.tbCourseECs.Text));
+            course = new Course(this.tbCourseName.Text, Convert.ToInt32(this.tbCourseECs.Text));
+
+            //course.SetName(this.tbCourseName.Text);
+            //course.SetEc(Convert.ToInt32(this.tbCourseECs.Text));
         }
 
         private void btnShowCourseInfo_Click(object sender, EventArgs e)

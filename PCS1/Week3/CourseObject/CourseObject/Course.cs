@@ -13,6 +13,13 @@ namespace CourseObject
         private String name;
         private int ec;
 
+        // Constructor
+        public Course(String name, int ec)
+        {
+            this.name = name;
+            this.ec = ec;
+        }
+
         // Methods 
         public void SetName(String name)
         { 
